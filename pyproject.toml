@@ -1,0 +1,13 @@
+# Configuration du projet.
+# Seule la section pytest est nécessaire : elle indique où se trouve le code.
+
+[project]
+name = "classification-tumeurs"
+version = "1.0.0"
+description = "Classification de tumeurs du sein (projet pédagogique sur données publiques)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+# Le code du projet est dans src/ : on l'ajoute au chemin de recherche de Python
+pythonpath = ["src"]
+testpaths = ["tests"]

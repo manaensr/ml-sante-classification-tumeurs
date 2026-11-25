@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ml-sante-classification-tumeurs
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python scripts/entrainer.py
+    startCommand: uvicorn classification_tumeurs.api_prediction:app --app-dir src --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
